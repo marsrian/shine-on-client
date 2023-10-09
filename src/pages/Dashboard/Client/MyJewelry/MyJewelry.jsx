@@ -1,6 +1,6 @@
 import useCart from "../../../../hooks/useCart";
 import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const TABLE_HEAD = ["#", "Name", "Photo", "Details", "Action"];
@@ -65,7 +65,7 @@ const MyJewelry = () => {
                 </td>
                 <td>
                   <button className="btn btn-ghost bg-blue-400 hover:bg-blue-600 text-white px-3 py-1 rounded-sm">
-                    <Link to={`/cart/${item._id}`}>Details</Link>
+                  Details
                   </button>
                 </td>
                 <td>
