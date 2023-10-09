@@ -113,7 +113,7 @@ const Login = () => {
       <p className="text-center mb-3">
         Or
       </p>
-      {/* Google sign */}
+      {/* Google sign in */}
       <div className="mb-6">
         <SocialLogin />
       </div>
