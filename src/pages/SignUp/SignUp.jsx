@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin";
 
 const SignUp = () => {
   const {
@@ -169,6 +170,12 @@ const SignUp = () => {
           Login
         </Link>
       </p>
+      <p className="text-center mb-3">
+        Or
+      </p>
+      <div className="mb-6">
+        <SocialLogin />
+      </div>
     </div>
   );
 };

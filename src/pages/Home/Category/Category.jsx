@@ -6,8 +6,8 @@ import Necklaces from "../../../assets/Category/Necklaces-02.png"
 
 const Category = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">
+    <div className="mt-8 px-4 md:p-0">
+      <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">
         Jewelry Collection
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

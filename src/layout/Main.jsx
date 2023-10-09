@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className="">
       <Header />
-      <div className="container mx-auto bg-gray-100">
+      <div className="container mx-auto bg-gray-100 min-h-[calc(100vh-310px)]">
         <Outlet />
       </div>
       <Footer />
