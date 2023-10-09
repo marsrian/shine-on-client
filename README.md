@@ -4,7 +4,7 @@
 
 ## Live Link
 
-Hosted in Firebase -> [Sports-Plus](https://shine-on-2023.web.app/)
+Hosted in Firebase -> [Shine-On](https://shine-on-2023.web.app/)
 
 # Home-Page:
 
