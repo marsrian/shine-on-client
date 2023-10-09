@@ -26,7 +26,7 @@ const SignUp = () => {
             name: data.name,
             email: data.email,
             photoURL: data.photoURL,
-            role: "user",
+            role: "client",
           };
           fetch("https://shine-on-server.vercel.app/users", {
             method: "POST",
