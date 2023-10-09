@@ -1,4 +1,5 @@
-import ring1 from "../../../assets/Category/Gold-1.png"
+import { Link } from "react-router-dom";
+import ring1 from "../../../assets/Category/Gold-1.png";
 
 const CustomDesign = () => {
   return (
@@ -8,9 +9,16 @@ const CustomDesign = () => {
       </h1>
       <div className="flex flex-col md:flex-row gap-4 justify-evenly items-center">
         <div>
-            <h3 className="text-4xl md:text-6xlxl font-bold text-gray-800 mb-3">Design Your Dream <br /> Rings yourself</h3>
-            <p className="text-gray-600 mb-3">Create your unique wedding rings with our 3D <br /> configurator. At Trauringspezlisten. de your wishes become reality </p>
-            <button className="text-yellow-500 border-2 border-yellow-500 rounded-3xl px-3 py-2">CONFIGURE NOW</button>
+          <h3 className="text-4xl md:text-6xlxl font-bold text-gray-800 mb-3">
+            Design Your Dream <br /> Rings yourself
+          </h3>
+          <p className="text-gray-600 mb-3">
+            Create your unique wedding rings with our 3D <br /> configurator. At
+            Trauringspezlisten. de your wishes become reality{" "}
+          </p>
+          <button className="text-yellow-500 border-2 border-yellow-500 rounded-3xl px-3 py-2">
+            <Link to={`/ring-collection`}>CONFIGURE NOW</Link>
+          </button>
         </div>
         <img className="h-72 w-60" src={ring1} alt="" />
       </div>
