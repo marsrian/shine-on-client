@@ -2,6 +2,9 @@
 
 ## Website-Name: Shine On
 
+* Admin Email: test3@gmail.com
+* Password: A!3456
+
 ## Live Link
 
 Hosted in Firebase -> [Shine-On](https://shine-on-2023.web.app/)
