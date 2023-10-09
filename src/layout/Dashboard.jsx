@@ -7,7 +7,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   const [isAdmin] = useAdmin();
   return (
-    <div className="grid grid-cols-5 gap-6 pt-8 bg-gray-100">
+    <div className="grid grid-cols-5 gap-6 pt-8 bg-gray-100 mb-4">
       <div className="col-span-1 p-4 md:p-6 bg-white shadow-xl text-center">
         {isAdmin ? (
           <div>

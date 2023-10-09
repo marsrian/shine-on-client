@@ -3,6 +3,7 @@ import ActiveLink from "./ActiveLink";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
+import Logo from "../assets/Category/Gold-4.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -16,7 +17,12 @@ const Header = () => {
 
   return (
     <div className="flex justify-between items-center h-20 my-auto bg-white px-4 md:px-8">
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Shine On</h1>
+      <div className="flex items-center">
+        <img className="h-10 w-10" src={Logo} alt="" />
+        <h1 className="text-xl font-semibold italic text-gray-800">
+          Shine On
+        </h1>
+      </div>
       <div className="flex gap-8 items-center">
         <ul className="hidden md:flex gap-6">
           <li className="hover:text-purple-400 font-medium">

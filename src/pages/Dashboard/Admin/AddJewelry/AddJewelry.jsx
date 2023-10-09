@@ -43,7 +43,7 @@ const AddJewelry = () => {
       });
   };
   return (
-    <div>
+    <div className="">
       <h3 className="text-center mt-4 mb-4 text-3xl font-bold text-blue-gray-800 dark:text-white">
         Add a Jewelry
       </h3>

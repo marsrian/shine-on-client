@@ -13,7 +13,7 @@ const Category = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Link
           to={`/ring-collection`}
-          className="bg-white p-4 rounded-md shadow-2xl"
+          className="bg-white p-4 rounded-md shadow-2xl hover:bg-gray-300"
         >
           <img className="w-24 h-24 mx-auto" src={Rings} alt="" />
           <h3 className="text-center text-lg font-medium text-gray-800">
@@ -22,7 +22,7 @@ const Category = () => {
         </Link>
         <Link
           to={`/earring-collection`}
-          className="bg-white p-4 rounded-md shadow-2xl"
+          className="bg-white p-4 rounded-md shadow-2xl hover:bg-gray-300"
         >
           <img className="w-24 h-24 mx-auto" src={Earrings} alt="" />
           <h3 className="text-center text-lg font-medium text-gray-800">
@@ -31,7 +31,7 @@ const Category = () => {
         </Link>
         <Link
           to={`/bracelets-collection`}
-          className="bg-white p-4 rounded-md shadow-2xl"
+          className="bg-white p-4 rounded-md shadow-2xl hover:bg-gray-300"
         >
           <img className="w-24 h-24 mx-auto" src={Bracelets} alt="" />
           <h3 className="text-center text-lg font-medium text-gray-800">
@@ -40,7 +40,7 @@ const Category = () => {
         </Link>
         <Link
           to={`/necklace-collection`}
-          className="bg-white p-4 rounded-md shadow-2xl"
+          className="bg-white p-4 rounded-md shadow-2xl hover:bg-gray-300"
         >
           <img className="w-24 h-24 mx-auto" src={Necklaces} alt="" />
           <h3 className="text-center text-lg font-medium text-gray-800">
