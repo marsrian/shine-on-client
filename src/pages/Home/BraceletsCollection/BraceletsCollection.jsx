@@ -30,7 +30,7 @@ const BraceletsCollection = () => {
   const filteredData = data.filter((item) => item.category === category);
 
   return (
-    <div>
+    <div className="px-4">
       <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">
         Bracelets Collection
       </h1>

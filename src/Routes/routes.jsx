@@ -20,6 +20,8 @@ import BraceletsCollection from "../pages/Home/BraceletsCollection/BraceletsColl
 import SingleBracelets from "../pages/Home/BraceletsCollection/SingleBracelets";
 import NecklaceCollection from "../pages/Home/NecklaceCollection/NecklaceCollection";
 import SingleNecklace from "../pages/Home/NecklaceCollection/SingleNecklace";
+import PaymentSuccess from "../pages/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../pages/PaymentFail/PaymentFail";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,22 @@ const router = createBrowserRouter([
       {
         path: "/all-jewelry",
         element: <AllJewelry />,
+      },
+      {
+        path: "payment/success/:tranId",
+        element: (
+          <PrivetRoute>
+            <PaymentSuccess />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "payment/fail/:tranId",
+        element: (
+          <PrivetRoute>
+            <PaymentFail />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/blogs",

@@ -5,10 +5,11 @@ import {
 } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
 
 const SingleRing = () => {
   const ring = useLoaderData();
-  const { jewelryName, size, color, price, description, photo, category } = ring;
+  const { _id, jewelryName, size, color, price, description, photo, category } = ring;
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -62,12 +63,34 @@ const SingleRing = () => {
     }
   };
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    data.productId = _id;
+
+    fetch("https://shine-on-server.vercel.app/order", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        window.location.replace(result.url);
+        console.log(result);
+      });
+  };
+
   return (
-    <div>
+    <div className="px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <img className="bg-white" src={photo} alt="" />
         <div className="bg-white p-4 flex flex-col gap-3">
-          <h3 className="text-4xl font-medium text-gray-800">{jewelryName}</h3>
+          <h3 className="text-3xl md:text-4xl font-medium text-gray-800">{jewelryName}</h3>
           <p className="text-2xl">Price: ${price}</p>
           <p className="text-2xl">Category: {category}</p>
           <p className="text-2xl">Size: {size}</p>
@@ -77,6 +100,50 @@ const SingleRing = () => {
           <button onClick={() => handleAddToCart(ring)} className="text-white bg-blue-500 hover:bg-blue-600 text-lg font-medium w-full py-2 rounded-md mt-4">
             Add to Cart
           </button>
+          {/* React Hook Form */}
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label
+              className="text-lg font-medium text-gray-800 mr-2"
+              htmlFor="name"
+            >
+              Your name:
+            </label>
+            <input
+              className="border-2 p-2 mb-2"
+              placeholder="Name"
+              {...register("name")}
+            />
+            <br />
+            <label
+              className="text-lg font-medium text-gray-800 mr-1"
+              htmlFor="currency"
+            >
+              Currency:
+            </label>
+            <select className="border-2 p-2 mb-2" {...register("currency")}>
+              <option value="BDT">BDT</option>
+              <option value="USD">USD</option>
+            </select>
+            <br />
+            <label
+              className="text-lg font-medium text-gray-800 mr-2"
+              htmlFor="phone"
+            >
+              Phone:
+            </label>
+            <input
+              className="border-2 p-2 mb-2"
+              placeholder="Phone Number"
+              {...register("phone", { required: true })}
+            />
+            <br />
+            {errors.phone && <span>This field is required</span>}
+            <input
+              className="bg-black hover:gray-800 text-white px-8 py-2 rounded-md font-semibold cursor-pointer"
+              type="submit"
+              value="pay"
+            />
+          </form>
         </div>
       </div>
     </div>

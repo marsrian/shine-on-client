@@ -28,7 +28,7 @@ const AllJewelry = () => {
     : data;
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 px-4">
       <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">All Jewelry Collection</h1>
       <div className="mb-6">
         <label className="text-lg mr-1" htmlFor="category-select">Select a category: </label>

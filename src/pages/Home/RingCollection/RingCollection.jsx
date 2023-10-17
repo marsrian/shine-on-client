@@ -9,7 +9,9 @@ const RingCollection = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("https://shine-on-server.vercel.app/jewelryAll");
+        const response = await fetch(
+          "https://shine-on-server.vercel.app/jewelryAll"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -28,19 +30,21 @@ const RingCollection = () => {
   const filteredData = data.filter((item) => item.category === category);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">Rings Collection</h1>
+    <div className="px-4">
+      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">
+        Rings Collection
+      </h1>
       {loading ? (
-          <p className="text-center text-3xl font-bold text-red-400">
-            Loading...
-          </p>
-        ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {filteredData.map((ring) => (
-              <RingAllCollection key={ring._id} ring={ring}></RingAllCollection>
-            ))}
-          </div>
-        )}
+        <p className="text-center text-3xl font-bold text-red-400">
+          Loading...
+        </p>
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {filteredData.map((ring) => (
+            <RingAllCollection key={ring._id} ring={ring}></RingAllCollection>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
