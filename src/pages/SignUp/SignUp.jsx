@@ -1,12 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
-// import SocialLink from "../Shared/SocialLink/SocialLink";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../../components/SocialLogin";
 
+const image_hosting_token = import.meta.env.VITE_Image_Upload_Token;
+
 const SignUp = () => {
+  const image_hosting_URL = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`;
+
   const {
     register,
     handleSubmit,
@@ -16,45 +19,60 @@ const SignUp = () => {
   const password = watch("password");
   const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
-  const onSubmit = (data) => {
-    createUser(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
 
-      updateUserProfile(data.name, data.photoURL)
-        .then(() => {
-          const saveUser = {
-            name: data.name,
-            email: data.email,
-            photoURL: data.photoURL,
-            role: "client",
-          };
-          fetch("https://shine-on-server.vercel.app/users", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(saveUser),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.insertedId) {
-                // reset();
-                Swal.fire({
-                  position: "top-end",
-                  icon: "success",
-                  title: "User created successfully",
-                  timer: 1500,
-                });
-                logOut()
-                  .then(() => {})
-                  .catch((error) => error.message);
-                navigate("/login");
-              }
-            });
-        })
-        .catch((error) => console.log(error.message));
-    });
+  const onSubmit = (data) => {
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+
+    fetch(image_hosting_URL, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgResponse) => {
+        if (imgResponse.success) {
+          const imgURL = imgResponse.data.display_url;
+
+          createUser(data.email, data.password).then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+
+            updateUserProfile(data.name, imgURL)
+              .then(() => {
+                const saveUser = {
+                  name: data.name,
+                  email: data.email,
+                  photoURL: imgURL,
+                  role: "client",
+                };
+                fetch("https://shine-on-server.vercel.app/users", {
+                  method: "POST",
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(saveUser),
+                })
+                  .then((res) => res.json())
+                  .then((data) => {
+                    console.log(data);
+                    if (data.insertedId) {
+                      Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "User created successfully",
+                        timer: 1500,
+                      });
+                      logOut()
+                        .then(() => {})
+                        .catch((error) => error.message);
+                      navigate("/login");
+                    }
+                  });
+              })
+              .catch((error) => console.log(error.message));
+          });
+        }
+      });
   };
   return (
     <div className="bg-gray-100">
@@ -96,18 +114,18 @@ const SignUp = () => {
           )}
         </div>
         <div className="">
-          <label className="font-semibold" htmlFor="photoURL">
+          <label className="font-semibold" htmlFor="image">
             Photo URL
           </label>
           <input
             className="border-2 border-[#C5C5C5] py-2 px-3 w-full rounded-lg mt-2"
-            type="text"
-            {...register("photoURL", { required: "Photo URL is required" })}
+            type="file"
+            {...register("image", { required: "Photo URL is required" })}
             id=""
-            placeholder="Enter Photo URL"
+            // placeholder="Enter Photo URL"
           />
           {errors.photoURL && (
-            <p className="text-sm text-red-500">{errors.photoURL.message}</p>
+            <p className="text-sm text-red-500">{errors.image.message}</p>
           )}
         </div>
         <div className="my-3">
@@ -170,9 +188,7 @@ const SignUp = () => {
           Login
         </Link>
       </p>
-      <p className="text-center mb-3">
-        Or
-      </p>
+      <p className="text-center mb-3">Or</p>
       <div className="mb-6">
         <SocialLogin />
       </div>
