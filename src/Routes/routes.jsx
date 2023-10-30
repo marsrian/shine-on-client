@@ -5,7 +5,6 @@ import AllJewelry from "../pages/AllJewelry/AllJewelry";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import NotFound from "../pages/NotFound/NotFound";
-import Blogs from "../pages/Blogs/Blogs";
 import Dashboard from "../layout/Dashboard";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import PrivetRoute from "./PrivetRoute";
@@ -67,10 +66,6 @@ const router = createBrowserRouter([
             <PaymentFail />
           </PrivetRoute>
         ),
-      },
-      {
-        path: "/blogs",
-        element: <Blogs />,
       },
       {
         path: "/login",

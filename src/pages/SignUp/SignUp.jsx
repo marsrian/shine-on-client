@@ -75,13 +75,13 @@ const SignUp = () => {
       });
   };
   return (
-    <div className="bg-gray-100">
-      <h1 className="text-center font-semibold text-gray-800 text-lg mb-3">
+    <div className="bg-gray-100 mt-24">
+      <h1 className="text-center font-bold text-gray-800 text-lg mb-3">
         Sign Up
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full md:w-[400px] mx-4 md:mx-auto p-4 md:p-8 bg-white shadow-xl rounded-md"
+        className="w-full md:w-[400px] md:mx-auto p-4 md:p-8 bg-white shadow-xl rounded-md"
       >
         <div className="">
           <label className="font-semibold" htmlFor="name">
@@ -115,7 +115,7 @@ const SignUp = () => {
         </div>
         <div className="">
           <label className="font-semibold" htmlFor="image">
-            Photo URL
+            Photo Upload
           </label>
           <input
             className="border-2 border-[#C5C5C5] py-2 px-3 w-full rounded-lg mt-2"

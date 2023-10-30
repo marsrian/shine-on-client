@@ -30,9 +30,9 @@ const RingCollection = () => {
   const filteredData = data.filter((item) => item.category === category);
 
   return (
-    <div className="px-4">
-      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">
-        Rings Collection
+    <div className="mt-20 pt-8 px-4">
+      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3 dark:text-white underline decoration-wavy decoration-green-400">
+      Rings Collection
       </h1>
       {loading ? (
         <p className="text-center text-3xl font-bold text-red-400">

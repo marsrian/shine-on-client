@@ -3,16 +3,16 @@ import ring1 from "../../../assets/Category/Gold-1.png";
 
 const CustomDesign = () => {
   return (
-    <div className="my-10 px-4 md:p-0">
-      <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">
+    <div className="mt-16 px-4 md:p-0">
+      <h1 className="text-3xl font-bold text-gray-800 underline decoration-wavy decoration-green-400 text-center mb-4 dark:text-white">
         Custom Design
       </h1>
-      <div className="flex flex-col md:flex-row gap-4 justify-evenly items-center">
+      <div className="flex flex-col md:flex-row gap-4 justify-evenly items-center mt-8">
         <div>
-          <h3 className="text-4xl md:text-6xlxl font-bold text-gray-800 mb-3">
+          <h3 className="text-4xl md:text-6xlxl font-bold text-gray-800 mb-3 dark:text-white">
             Design Your Dream <br /> Rings yourself
           </h3>
-          <p className="text-gray-600 mb-3">
+          <p className="text-gray-600 mb-3 dark:text-white">
             Create your unique wedding rings with our 3D <br /> configurator. At
             Trauringspezlisten. de your wishes become reality{" "}
           </p>

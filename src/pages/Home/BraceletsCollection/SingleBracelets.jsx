@@ -83,9 +83,9 @@ const SingleBracelets = () => {
   };
 
   return (
-    <div className="px-4">
+    <div className="mt-20 p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img className="bg-white" src={photo} alt="" />
+        <img className="bg-white w-full h-full" src={photo} alt="" />
         <div className="bg-white p-4 flex flex-col gap-3">
           <h3 className="text-3xl md:text-4xl font-medium text-gray-800">
             {jewelryName}
@@ -114,9 +114,15 @@ const SingleBracelets = () => {
             <input
               className="border-2 p-2 mb-2"
               placeholder="Name"
-              {...register("name")}
+              {...register("name", { required: true })}
             />
             <br />
+            {errors.name && (
+              <div>
+                <p className="mb-1 text-red-600">Name is required</p>
+                <br />
+              </div>
+            )}
             <label
               className="text-lg font-medium text-gray-800 mr-1"
               htmlFor="currency"
@@ -140,7 +146,12 @@ const SingleBracelets = () => {
               {...register("phone", { required: true })}
             />
             <br />
-            {errors.phone && <span>This field is required</span>}
+            {errors.phone && (
+              <div>
+                <p className="mb-1 text-red-600">Phone Number is required</p>
+                <br />
+              </div>
+            )}
             <input
               className="bg-black hover:gray-800 text-white px-8 py-2 rounded-md font-semibold cursor-pointer"
               type="submit"

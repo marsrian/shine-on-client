@@ -42,13 +42,13 @@ const Login = () => {
   };
 
   return (
-    <div className="pt-12 bg-gray-100">
-      <h1 className="text-center font-semibold text-gray-800 text-lg mb-3">
+    <div className="mt-24 bg-gray-100">
+      <h1 className="text-center font-bold text-gray-800 text-lg mb-3">
         Login
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full md:w-[400px] mx-4 md:mx-auto p-4 md:p-8 bg-white shadow-xl rounded-md"
+        className="w-full md:w-[400px] md:mx-auto p-4 md:p-8 bg-white shadow-xl rounded-md"
       >
         <div className="my-3">
           <label className="font-semibold" htmlFor="email">

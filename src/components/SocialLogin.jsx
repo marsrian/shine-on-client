@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const SocialLogin = () => {
-    const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,17 +35,17 @@ const SocialLogin = () => {
     });
   };
 
-    return (
-        <>
+  return (
+    <div className="w-72 mx-auto">
       <button
         onClick={handleGoogleSign}
-        className="flex items-center p-3 border-2 border-[#C7C7C7] rounded-full w-1/4 mx-auto"
+        className="flex items-center px-3 py-2 border-2 border-[#C7C7C7] rounded-full"
       >
         <FaGoogle className="w-6 h-6 mr-14"></FaGoogle>{" "}
         <span className="font-medium">Continue with Google</span>
       </button>
-    </>
-    );
+    </div>
+  );
 };
 
 export default SocialLogin;

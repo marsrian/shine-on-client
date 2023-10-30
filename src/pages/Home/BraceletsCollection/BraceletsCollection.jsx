@@ -30,8 +30,8 @@ const BraceletsCollection = () => {
   const filteredData = data.filter((item) => item.category === category);
 
   return (
-    <div className="px-4">
-      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">
+    <div className="mt-20 pt-8 px-4">
+      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3 dark:text-white underline decoration-wavy decoration-green-400">
         Bracelets Collection
       </h1>
       {loading ? (
@@ -39,7 +39,7 @@ const BraceletsCollection = () => {
           Loading...
         </p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
           {filteredData.map((bracelets) => (
             <BraceletsAllCollection key={bracelets._id} bracelets={bracelets}></BraceletsAllCollection>
           ))}

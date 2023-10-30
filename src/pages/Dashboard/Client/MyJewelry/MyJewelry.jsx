@@ -34,8 +34,8 @@ const MyJewelry = () => {
   };
 
   return (
-    <div>
-      <h3 className="my-4 text-3xl font-semibold text-center">
+    <div className="mt-10">
+      <h3 className="mb-8 text-3xl font-semibold text-center underline decoration-wavy decoration-green-400">
         Total add Jewelry: {cart.length}
       </h3>
       <table className="w-full min-w-max table-auto text-left">

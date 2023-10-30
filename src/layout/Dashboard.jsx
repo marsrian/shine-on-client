@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
   return (
     <div className="grid grid-cols-5 gap-6 pt-8 bg-gray-100 mb-4">
-      <div className="col-span-1 p-4 md:p-6 bg-white shadow-xl text-center">
+      <div className="col-span-1 p-4 md:p-6 shadow-xl text-center bg-teal-500">
         {isAdmin ? (
           <div>
             <h1 className="text-xl font-semibold text-gray-800 mb-2">
@@ -20,7 +20,9 @@ const Dashboard = () => {
               alt=""
             />
             <h3 className="">Name: {user?.displayName}</h3>
-            <hr className="my-2" />
+            <div className="my-4">
+            <hr/>
+            </div>
             <ul>
               <li className="mb-3 text-lg font-medium text-gray-800">
                 <ActiveLink to="/dashboard/manage-users">Manage Users</ActiveLink>
@@ -41,7 +43,9 @@ const Dashboard = () => {
               alt=""
             />
             <h3 className="">Name: {user?.displayName}</h3>
-            <hr className="my-2" />
+            <div className="my-4">
+            <hr/>
+            </div>
             <ul>
               <li className="mb-3 text-lg font-medium text-gray-800">
                 <ActiveLink to="/dashboard/my-jewelry">My Jewelry</ActiveLink>

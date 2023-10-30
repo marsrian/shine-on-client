@@ -28,10 +28,10 @@ const AllJewelry = () => {
     : data;
 
   return (
-    <div className="mb-4 px-4">
-      <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">All Jewelry Collection</h1>
-      <div className="mb-6">
-        <label className="text-lg mr-1" htmlFor="category-select">Select a category: </label>
+    <div className="px-4">
+      <h1 className="text-3xl font-bold text-gray-800 underline decoration-wavy decoration-green-400 text-center mb-3 dark:text-white pt-4">All Jewelry Collection</h1>
+      <div className="mb-6 mt-10">
+        <label className="text-lg mr-1 dark:text-white" htmlFor="category-select">Select a category: </label>
         <select
           id="category-select"
           onChange={(e) => setCategory(e.target.value)}
