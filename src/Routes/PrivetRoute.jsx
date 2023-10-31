@@ -16,7 +16,7 @@ const PrivetRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className=" mt-12">
+      <div className="mt-24">
         <ClockLoader
           cssOverride={override}
           size={150}
