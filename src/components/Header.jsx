@@ -90,7 +90,7 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`block md:hidden text-gray-800 dark:text-white ${
+        className={`block md:hidden text-white ${
           menuOpen ? "hidden" : ""
         }`}
         onClick={toggleMenu}

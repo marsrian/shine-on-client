@@ -8,7 +8,7 @@ const PaymentSuccess = () => {
         <p className="text-center text-5xl font-bold text-green-700">✔</p>
       </div>
       <h1 className="text-green-600 text-center text-lg mb-2">
-        Payment Successfully
+        Payment Successful
       </h1>
       <p className="text-center font-semibold">Transaction Id: {tranId}</p>
     </div>
